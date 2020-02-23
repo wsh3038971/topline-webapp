@@ -7,10 +7,15 @@ import store from './store'
 import './styles/index.css'
 
 // 引入vee-validate验证插件
-
 import {ValidationProvider, extend, ValidationObserver} from 'vee-validate'
 import * as rules from 'vee-validate/dist/rules'  // 加载所有验证规则
 import zhCN from 'vee-validate/dist/locale/zh_CN.json' // 加载中文 
+
+// 相对时间处理
+// 为了能方便的使用relativeTime方法,将其注册为全局过滤器
+import {relativeTime} from  './utils/date'
+
+Vue.filter('relativeTime', relativeTime)
 
 
 // 按需注册vant组件
@@ -19,14 +24,40 @@ import { Button,
           Field,
           Cell,
           CellGroup,
-          Toast} from 'vant';
+          Toast, 
+          Tabbar, 
+          TabbarItem,
+          Tab, 
+          Tabs,
+          List,
+          PullRefresh,
+          Grid, 
+          GridItem,
+          Image,
+          Icon,
+          Lazyload,
+          Popup,
+          Search } from 'vant';
 
 Vue.use(Button)
     .use(NavBar)
     .use(Field)
     .use(Cell)
     .use(CellGroup)
-    .use(Toast);
+    .use(Toast)
+    .use(Tabbar)
+    .use(TabbarItem)
+    .use(Tab)
+    .use(Tabs)
+    .use(List)
+    .use(PullRefresh)
+    .use(Grid)
+    .use(GridItem)
+    .use(Image)
+    .use(Icon)
+    .use(Lazyload)
+    .use(Popup)
+    .use(Search);
 
 // 配置表单验证插件
 

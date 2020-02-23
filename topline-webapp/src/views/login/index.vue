@@ -49,8 +49,8 @@ export default {
         return {
             // 手机号和验证码
             user: {
-                mobile: null,
-                code: null
+                mobile: '13911111111',
+                code: '246810'
             },
             // 控制登录按钮的loading状态
             isLoading: false
@@ -75,7 +75,12 @@ export default {
                 this.isLoading = true
 
                 const { data } = await login(this.user)
+
+                // 登陆成功,将token存储至vuex容器中
+                this.$store.commit('setUser', data.data)
+
                 this.$toast.success('登陆成功')
+                this.$router.push('/')
             } catch (err) {
                 if (err.response && err.response.status === 400) {
                     this.$toast.fail('登陆失败')
