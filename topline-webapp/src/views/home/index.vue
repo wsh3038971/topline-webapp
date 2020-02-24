@@ -28,7 +28,13 @@
                         <van-cell 
                             v-for="article in item.articles" 
                             :key="article.art_id.toString()" 
-                            :title="article.title">
+                            :title="article.title"
+                            @click="$router.push({
+                                name: 'article',
+                                params: {
+                                    articleId: article.art_id.toString()
+                                }    
+                            })">
                             <!-- label插槽可以自定义标题下方描述 -->
                             <div slot="label">
                                 <!-- 文章图片 -->
@@ -266,7 +272,6 @@ export default {
                     channels = data.data.channels
                 }
             }
-            console.log(channels)
 
 
             // 为每一个频道初始化一个数组,存储文章列表,给每个频道初始化loading和finished控制每个频道的loading状态和是否加载结束

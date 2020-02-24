@@ -5,6 +5,7 @@ import Tabbar from '../views/tabbar'
 import Home from '../views/home'
 import Search from '../views/search'
 import SerachResult from '../views/search-result'
+import Article from '../views/article'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ const routes = [
     name: 'search-result',  // 搜索结果
     path: '/search/:q',
     component: SerachResult
+  },
+  {
+    name: 'article',  // 文章详情
+    path: '/article/:articleId',
+    component: Article
   },
   {
     // 嵌套路由如果有默认子路由则不需要name

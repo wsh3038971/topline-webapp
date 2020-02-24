@@ -37,7 +37,8 @@ import { Button,
           Icon,
           Lazyload,
           Popup,
-          Search } from 'vant';
+          Search,
+          Loading } from 'vant';
 
 Vue.use(Button)
     .use(NavBar)
@@ -57,7 +58,8 @@ Vue.use(Button)
     .use(Icon)
     .use(Lazyload)
     .use(Popup)
-    .use(Search);
+    .use(Search)
+    .use(Loading);
 
 // 配置表单验证插件
 
